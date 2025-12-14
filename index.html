@@ -17,7 +17,7 @@ body {
     background-color: #0f111a;
     color: #fff;
     line-height: 1.6;
-    padding-top: 80px; /* Header height */
+    padding-top: 80px; /* Space for sticky header */
 }
 a {
     text-decoration: none;
@@ -64,7 +64,7 @@ nav {
 nav a {
     margin-left: 2rem;
     font-weight: 600;
-    color: #fff; /* White links for dark header */
+    color: #fff;
     transition: color 0.3s;
 }
 nav a:hover {
@@ -80,23 +80,24 @@ nav a:hover {
     color: #fff;
 }
 
-/* Mobile styles */
+/* Mobile styles with smooth slide */
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
     }
     nav {
-        display: none;
+        max-height: 0;          /* Start collapsed */
+        overflow: hidden;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background: #0f111a;
-        padding: 1rem 0;
+        transition: max-height 0.4s ease;
     }
     nav.show {
-        display: flex;
+        max-height: 500px;      /* Expand smoothly */
     }
     nav a {
         margin: 1rem 0;
@@ -168,16 +169,12 @@ nav a:hover {
     font-size: 2.5rem;
     margin-bottom: 40px;
 }
-
-/* Projects Grid */
 .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
-
-/* Project Card */
 .project-card {
     background: #fff;
     border-radius: 12px;

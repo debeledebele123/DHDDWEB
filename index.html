@@ -109,40 +109,58 @@
             overflow: hidden;
         }
 
-        /* Sections */
-        section {
-            padding: 3rem 4%;
-        }
-        section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
+/* Portfolio Section */
+#portfolio {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
 
-        /* Projects */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-        .project-card {
-            background-color: #1a1c28;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .project-card p {
-            padding: 0.5rem 1rem 1rem;
-        }
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Projects Grid */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Each Project Card */
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Images and Videos inside Card */
+.project-card img,
+.project-card video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
 
         /* About Section */
         .about {
@@ -240,26 +258,38 @@
     </section>
 
     <!-- Featured Projects -->
-    <section id="portfolio">
-        <h2>Featured Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <img src="pc1.png" alt="Poster Design">
-                <p>Poster Design</p>
-            </div>
-<div class="project-card">
-    <video width="320" height="240" controls>
-        <source src="3D-SLIDES-NoSound.wmv" type="video/wmv">
-        Your browser does not support the video tag.
-    </video>
-    <p>Video Project</p>
-</div>
-            <div class="project-card">
-                <img src="pc4.png" alt="Web Template">
-                <p>Web Template</p>
-            </div>
+<section id="portfolio">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+        <!-- Poster Design -->
+        <div class="project-card">
+            <img src="pc1.png" alt="Poster Design">
+            <p>Poster Design</p>
         </div>
-    </section>
+
+        <!-- Video Project -->
+        <div class="project-card">
+            <video controls>
+                <source src="3D-SLIDES-NoSound.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video Project</p>
+        </div>
+
+        <!-- Web Template -->
+        <div class="project-card">
+            <img src="pc4.png" alt="Web Template">
+            <p>Web Template</p>
+        </div>
+
+        <!-- Additional Project Example -->
+        <div class="project-card">
+            <img src="pc5.png" alt="Graphic Design">
+            <p>Graphic Design</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about">

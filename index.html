@@ -182,77 +182,77 @@
             overflow: hidden;
         }
 
-    /* Services Section */
-#services {
+  /* General Section Styles */
+section {
     padding: 60px 20px;
-    background-color: #f1f1f1; /* Section background */
     text-align: center;
 }
 
-#services h2 {
+h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #333;
 }
 
-/* Services Grid */
-.services {
+/* Shared Card Styles */
+.project-card, .service-card {
+    background-color: #e0e0e0; /* Uniform card color */
+    border-radius: 12px;
+    padding: 15px;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover, .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Grid Layouts */
+.projects, .services {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
 
-/* Each Service Card */
-.service-card {
-    background-color: #e0e0e0; /* Same color for all cards */
-    border-radius: 12px;
-    padding: 15px;
-    max-width: 250px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Images in Service Cards */
+/* Images and Videos in Cards */
+.project-card img,
+.project-card video,
 .service-card img {
-    width: 100%;          /* Full width of container */
-    height: 200px;        /* Fixed height for uniformity */
-    object-fit: cover;    /* Fill container, crop excess */
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Fill container without distortion */
     border-radius: 8px;
     margin-bottom: 15px;
 }
 
-/* Service Titles & Text */
+/* Card Text */
+.project-card p,
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
 .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
     color: #222;
 }
 
-.service-card p {
-    font-size: 1rem;
-    color: #555;
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .projects, .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card, .service-card {
+        max-width: 90%;
+    }
 }
 
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .hero-text, .hero-image {
-                flex: 1 1 100%;
-            }
-            .about {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
@@ -332,36 +332,70 @@
             </div>
         </div>
     </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Services</h2>
-        <div class="services">
-            <div class="service-card">
-                <img src="pc3.png" alt="Graphic Design">
-                <h3>Graphic Design</h3>
-                <p>Posters, branding, flyers</p>
-            </div>
-            <div class="service-card">
-                <img src="pc8.png" alt="Web Development">
-                <h3>Web Development</h3>
-                <p>Responsive websites</p>
-            </div>
-            <div class="service-card">
-                <img src="pc9video.png" alt="Video Editing">
-                <h3>Video Editing</h3>
-                <p>Animations, promotional videos</p>
-            </div>
-            <div class="service-card">
-                <img src="pc11Web.png" alt="Templates">
-                <h3>Templates</h3>
-                <p>Editable PSD/HTML</p>
-            </div>
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+        <!-- Poster Design -->
+        <div class="project-card">
+            <img src="pc1.png" alt="Poster Design">
+            <p>Poster Design</p>
         </div>
-    </section>
+
+        <!-- Video Project -->
+        <div class="project-card">
+            <video controls>
+                <source src="3D-SLIDES-NoSound.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video Project</p>
+        </div>
+
+        <!-- Web Template -->
+        <div class="project-card">
+            <img src="pc4.png" alt="Web Template">
+            <p>Web Template</p>
+        </div>
+
+        <!-- Additional Project -->
+        <div class="project-card">
+            <img src="pc5.png" alt="Graphic Design">
+            <p>Graphic Design</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <h2>Services</h2>
+    <div class="services">
+        <div class="service-card">
+            <img src="pc3.png" alt="Graphic Design">
+            <h3>Graphic Design</h3>
+            <p>Posters, branding, flyers</p>
+        </div>
+        <div class="service-card">
+            <img src="pc8.png" alt="Web Development">
+            <h3>Web Development</h3>
+            <p>Responsive websites</p>
+        </div>
+        <div class="service-card">
+            <img src="pc9video.png" alt="Video Editing">
+            <h3>Video Editing</h3>
+            <p>Animations, promotional videos</p>
+        </div>
+        <div class="service-card">
+            <img src="pc11WEB.png" alt="Templates">
+            <h3>Templates</h3>
+            <p>Editable PSD/HTML</p>
+        </div>
+    </div>
+</section>
+
 
 </body>
 </html>
+
 
 
 

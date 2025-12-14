@@ -40,21 +40,57 @@
             transform: scale(1.05);
         }
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 4%;
-        }
-        nav a {
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #4f8ef7;
-        }
+       /* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4%;
+    position: relative;
+}
+
+/* Nav links */
+nav a {
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4f8ef7;
+}
+
+/* Toggle button */
+#menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hide nav by default on small screens */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 1rem 0;
+    }
+    nav.show {
+        display: flex;
+    }
+    nav a {
+        margin: 1rem 0;
+    }
+}
 
         /* Hero Section */
         .hero {
@@ -260,12 +296,13 @@ h2 {
     <!-- Header -->
     <header>
         <h1>DEBELE HEAVY DIGITAL DESIGN</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <button id="menu-toggle">☰</button> <!-- Toggle button -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
     </header>
 
     <!-- Hero Section -->
@@ -401,6 +438,7 @@ and that turn visions into real projects..</p>
 
 </body>
 </html>
+
 
 
 

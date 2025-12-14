@@ -43,49 +43,50 @@
         }
 
        /* Header */
-/* Make header sticky */
+/* Sticky Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4%;
-    position: fixed;   /* Keep it fixed */
-    top: 0;            /* Stick to top */
+    padding: 1.5rem 4%;
+    position: fixed;       /* Sticky at top */
+    top: 0;
     left: 0;
     width: 100%;
-    background: #fff;  /* Optional: background to cover content behind */
-    z-index: 1000;     /* Ensure it stays above other content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
+    background: #fff;      /* Background so content doesn't show through */
+    z-index: 1000;         /* Stay on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-
 /* Nav links */
+nav {
+    display: flex;
+}
 nav a {
     margin-left: 2rem;
     font-weight: 600;
     transition: color 0.3s;
 }
-
 nav a:hover {
     color: #4f8ef7;
 }
 
 /* Toggle button */
 #menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: none;         /* Hidden on desktop */
     font-size: 1.5rem;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* Hide nav by default on small screens */
+/* Mobile styles */
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
     }
     nav {
-        display: none;
+        display: none;       /* Hide menu by default */
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -95,13 +96,12 @@ nav a:hover {
         padding: 1rem 0;
     }
     nav.show {
-        display: flex;
+        display: flex;       /* Show menu when toggled */
     }
     nav a {
         margin: 1rem 0;
     }
 }
-
         /* Hero Section */
         .hero {
             display: flex;
@@ -450,11 +450,12 @@ const toggleButton = document.getElementById('menu-toggle');
 const nav = document.querySelector('header nav');
 
 toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('show'); // Toggle the "show" class
+    nav.classList.toggle('show'); // Toggle mobile menu visibility
 });
 </script>
 </body>
 </html>
+
 
 
 

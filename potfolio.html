@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHDD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f111a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Images */
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4%;
+        }
+        nav a {
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4f8ef7;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4%;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .hero-text p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+        .hero-text .btn {
+            padding: 0.8rem 1.5rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn-primary {
+            background-color: #4f8ef7;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background-color: #1a1c28;
+            color: #fff;
+            border: 1px solid #333;
+        }
+        .btn-secondary:hover {
+            transform: scale(1.05);
+        }
+        .hero-image {
+            flex: 1 1 400px;
+            text-align: center;
+            max-height: 450px;
+            overflow: hidden;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 4%;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background-color: #1a1c28;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-card p {
+            padding: 0.5rem 1rem 1rem;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        .about-text {
+            flex: 1 1 400px;
+        }
+        .about-text p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .about-image {
+            flex: 1 1 350px;
+            max-height: 350px;
+            overflow: hidden;
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background-color: #1a1c28;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text, .hero-image {
+                flex: 1 1 100%;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>DEBELE HEAVY DIGITAL DESIGN</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>DHDD</h1>
+            <h2>Web Developer & Graphic Designer</h2>
+            <p>Transforming Ideas into Stunning Designs & Websites</p>
+            <button class="btn btn-primary">View Portfolio</button>
+            <button class="btn btn-secondary">Contact Me</button>
+        </div>
+        <div class="hero-image">
+            <img src="pc3.png" alt="Hero Image">
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="portfolio">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="pc1.png" alt="Poster Design">
+                <p>Poster Design</p>
+            </div>
+            <div class="project-card">
+                <img src="pc2.png" alt="Video Project">
+                <p>Video Project</p>
+            </div>
+            <div class="project-card">
+                <img src="pc4.png" alt="Web Template">
+                <p>Web Template</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about">
+            <div class="about-text">
+                <h3>I create digital experiences that inspire and engage</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac fringilla mauris. Curabitur ac augue eget lacus ullamcorper commodo.</p>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+            <div class="about-image">
+                <img src="pc5.png" alt="About Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <img src="pc6.png" alt="Graphic Design">
+                <h3>Graphic Design</h3>
+                <p>Posters, branding, flyers</p>
+            </div>
+            <div class="service-card">
+                <img src="pc7.png" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Responsive websites</p>
+            </div>
+            <div class="service-card">
+                <img src="pc4.png" alt="Video Editing">
+                <h3>Video Editing</h3>
+                <p>Animations, promotional videos</p>
+            </div>
+            <div class="service-card">
+                <img src="pc3.png" alt="Templates">
+                <h3>Templates</h3>
+                <p>Editable PSD/HTML</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

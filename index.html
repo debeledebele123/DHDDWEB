@@ -435,9 +435,17 @@ and that turn visions into real projects..</p>
     </div>
 </section>
 
+<script>
+const toggleButton = document.getElementById('menu-toggle');
+const nav = document.querySelector('header nav');
 
+toggleButton.addEventListener('click', () => {
+    nav.classList.toggle('show'); // Toggle the "show" class
+});
+</script>
 </body>
 </html>
+
 
 
 

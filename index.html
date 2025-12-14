@@ -14,9 +14,11 @@
         }
         body {
             font-family: 'Inter', sans-serif;
+             padding-top: 80px;
             background-color: #0f111a;
             color: #fff;
             line-height: 1.6;
+
         }
         a {
             text-decoration: none;
@@ -41,13 +43,21 @@
         }
 
        /* Header */
+/* Make header sticky */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4%;
-    position: relative;
+    position: fixed;   /* Keep it fixed */
+    top: 0;            /* Stick to top */
+    left: 0;
+    width: 100%;
+    background: #fff;  /* Optional: background to cover content behind */
+    z-index: 1000;     /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
 }
+
 
 /* Nav links */
 nav a {
@@ -445,6 +455,7 @@ toggleButton.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
